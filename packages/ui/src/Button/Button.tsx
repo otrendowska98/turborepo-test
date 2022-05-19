@@ -1,7 +1,7 @@
 import React from 'react';
 import './button.css';
 
-type ButtonProps = {
+export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
@@ -27,13 +27,13 @@ type ButtonProps = {
 /**
  * Primary UI component for user interaction
  */
-export const Button: React.FC<ButtonProps> = ({
+export const Button = ({
   primary = false,
   size = 'medium',
   backgroundColor,
   label = 'Boop',
   ...props
-}) => {
+}: ButtonProps) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
